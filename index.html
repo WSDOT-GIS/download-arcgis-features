@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="index.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="downloadForm">
+        <input type="url" id="featureServiceUrl" name="url" pattern="https?\://.+/rest/services/(.+)/((Map)|(Feature))Server/\d+" 
+               required="required" placeholder="Enter layer URL" title="Enter a valid layer URL" autocomplete="on" />
+        <button type="submit">Submit</button>
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>

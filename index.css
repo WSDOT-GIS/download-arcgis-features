@@ -1,0 +1,11 @@
+﻿form {
+    width: 100%;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+    form > input[type=url] {
+        -ms-flex: 1;
+        flex: 1;
+    }
