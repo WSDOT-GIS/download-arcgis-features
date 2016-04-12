@@ -7,6 +7,11 @@
         root.downloadFeatures = factory();
     }
 }(this, function () {
+    /**
+     * Converts an object into a query string.
+     * @param {Object} o - An object
+     * @returns {string} - A query string.
+     */
     function objectToQuery(o) {
         var v, params = [];
         for (var name in o) {
@@ -18,6 +23,11 @@
         return params.join("&");
     }
 
+    /**
+     * Gets all of the object IDs from a feature layer.
+     * @parm {string} url - The URL of a feature layer.
+     * @returns {Promise.<number[]>} - A promise that resolves to an array of numbers.
+     */
     function getIds(url) {
         var query = {
             where: "1=1",
@@ -44,6 +54,11 @@
         return promise;
     }
 
+    /**
+     * Gets info about a feature layer.
+     * @param {string} url - A map/feature service layer URL.
+     * @returns {Promise.<object>} - An object with the properties of the feature layer.
+     */
     function getServiceInfo(url) {
         url = [url, "f=json"].join("?");
 
@@ -91,17 +106,27 @@
         var promise;
 
         var i, l, currentIds, where;
-        for (i = 0, l = oids.length; i < l; i += maxRecordCount) {
-            currentIds = oids.slice(i, maxRecordCount);
-            where = [oidFieldName, " IN (", currentIds.join(","), ")"].join("");
-            promise = queryFeatures(url, {
-                where: where,
+        if (oids.length <= maxRecordCount) {
+            promises = [queryFeatures(url, {
+                where: "1=1",
                 outFields: "*"
-            });
-            promises.push(promise);
+            })];
+        } else {
+            for (i = 0, l = oids.length; i < l; i += maxRecordCount) {
+                currentIds = oids.slice(i, i + maxRecordCount);
+                where = [oidFieldName, " IN (", currentIds.join(","), ")"].join("");
+                if (/\(\s*\)/.test(where)) {
+                    throw new Error("Invalid where statement:" + where);
+                }
+                promise = queryFeatures(url, {
+                    where: where,
+                    outFields: "*"
+                });
+                promises.push(promise);
+            }
         }
-
         promise = Promise.all(promises);
+
         return promise;
     }
 
