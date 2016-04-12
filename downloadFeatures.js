@@ -1,4 +1,5 @@
-﻿(function (root, factory) {
+﻿/// <reference path="bower_components/fetch/fetch.js" />
+(function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define([], factory);
@@ -36,22 +37,9 @@
         };
         url = [url + "/query", objectToQuery(query)].join("?");
 
-        var promise = new Promise(function (resolve, reject) {
-
-            var request = new XMLHttpRequest();
-            request.open("get", url);
-            request.onloadend = function () {
-                var response = JSON.parse(this.response);
-                response.url = url;
-                resolve(response);
-            };
-            request.onerror = function (e) {
-                reject(e);
-            };
-            request.send();
+        return fetch(url).then(function (response) {
+            return response.json();
         });
-
-        return promise;
     }
 
     /**
@@ -62,21 +50,9 @@
     function getServiceInfo(url) {
         url = [url, "f=json"].join("?");
 
-        var promise = new Promise(function (resolve, reject) {
-            var request = new XMLHttpRequest();
-            request.open("get", url);
-            request.onloadend = function () {
-                var response = JSON.parse(this.response);
-                response.url = url;
-                resolve(response);
-            };
-            request.onerror = function (e) {
-                reject(e);
-            };
-            request.send();
+        return fetch(url).then(function (response) {
+            return response.json();
         });
-
-        return promise;
     }
 
     function queryFeatures(url, queryParameters) {
@@ -84,21 +60,15 @@
             queryParameters.f = "json";
         }
         var params = objectToQuery(queryParameters);
-        var promise = new Promise(function (resolve, reject) {
-            var request = new XMLHttpRequest();
-            request.open("POST", [url, "query"].join("/"));
-            request.onloadend = function () {
-                var response = JSON.parse(this.response);
-                response.url = url;
-                resolve(response);
-            };
-            request.onerror = function (e) {
-                reject(e);
-            };
-            request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            request.send(params);
+        return fetch([url, "query"].join("/"), {
+            method: "POST",
+            body: params,
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(function (response) {
+            return response.json();
         });
-        return promise;
     }
 
     function downloadData(url, oids, oidFieldName, maxRecordCount) {
