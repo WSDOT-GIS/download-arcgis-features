@@ -1,12 +1,14 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <title></title>
     <link href="index.css" rel="stylesheet" />
+    <script src="../bower_components/es6-promise/es6-promise.min.js"></script>
+    <script src="../bower_components/fetch/fetch.js"></script>
 </head>
 <body>
     <form id="downloadForm">
-        <input type="url" id="featureServiceUrl" name="url" pattern="https?\://.+/rest/services/(.+)/((Map)|(Feature))Server/\d+" 
+        <input type="url" id="featureServiceUrl" name="url" pattern="https?\://.+/rest/services/(.+)/((Map)|(Feature))Server/\d+"
                required="required" placeholder="Enter layer URL" title="Enter a valid layer URL" autocomplete="on" />
         <button type="submit">Submit</button>
     </form>

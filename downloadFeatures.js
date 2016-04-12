@@ -25,7 +25,7 @@
 
     /**
      * Gets all of the object IDs from a feature layer.
-     * @parm {string} url - The URL of a feature layer.
+     * @param {string} url - The URL of a feature layer.
      * @returns {Promise.<number[]>} - A promise that resolves to an array of numbers.
      */
     function getIds(url) {
@@ -150,7 +150,6 @@
                 var maxRecordCount = serviceInfo.maxRecordCount;
 
                 downloadData(url, oids, oidFieldName, maxRecordCount).then(function (featureSets) {
-                    console.log("download data completed", e);
                     var mainFS = featureSets[0];
                     for (var i = 1, l = featureSets.length; i < l; i += 1) {
                         mainFS.features = mainFS.features.concat(featureSets[i].features);

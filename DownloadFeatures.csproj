@@ -39,11 +39,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="bower_components\es6-promise\es6-promise.js" />
+    <Content Include="bower_components\es6-promise\es6-promise.min.js" />
+    <Content Include="bower_components\es6-promise\promise.js" />
+    <Content Include="bower_components\es6-promise\promise.min.js" />
+    <Content Include="bower_components\fetch\fetch.js" />
+    <Content Include="demo\index.css" />
+    <Content Include="demo\index.html" />
+    <Content Include="demo\index.js" />
+    <Content Include="demo\worker.js" />
     <Content Include="downloadFeatures.js" />
-    <Content Include="index.css" />
-    <Content Include="index.html" />
-    <Content Include="index.js" />
-    <Content Include="worker.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -1,6 +1,6 @@
 ﻿/*global self*/
 
-importScripts("downloadFeatures.js");
+importScripts("../downloadFeatures.js");
 
 self.addEventListener("message", function (e) {
     console.log("Message recieved.", e);
@@ -8,6 +8,9 @@ self.addEventListener("message", function (e) {
     if (e.data.operation === "download") {
         downloadFeatures(url).then(function (featureSet) {
             self.postMessage({ message: "download complete", features: featureSet });
+            self.close();
+        }, function (err) {
+            self.postMessage({ message: "error", error: err.message });
             self.close();
         });
     }
