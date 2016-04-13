@@ -13,6 +13,8 @@
     }
 }(this, function (fetchPolyfill) {
 
+    var maxUrlChars = 2048;
+
     if (fetchPolyfill) {
         fetch = fetchPolyfill;
     }
@@ -74,13 +76,20 @@
             queryParameters.f = "json";
         }
         var params = objectToQuery(queryParameters);
-        return fetch([url, "query"].join("/"), {
-            method: "POST",
-            body: params,
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            }
-        }).then(function (response) {
+        var queryUrl = [url, "query"].join("/");
+        var promise;
+        if (queryUrl.length + params.length + 1 > maxUrlChars) {
+            promse = fetch(queryUrl, {
+                method: "POST",
+                body: params,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            });
+        } else {
+            promise = fetch([queryUrl, params].join("?"));
+        }
+        return promise.then(function (response) {
             return response.json();
         });
     }
