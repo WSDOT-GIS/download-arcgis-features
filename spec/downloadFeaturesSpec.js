@@ -11,5 +11,5 @@ describe("test downloadFeatures", function () {
         }, function (error) {
             done.fail(error);
         });
-    });
+    }, 10000);
 });
