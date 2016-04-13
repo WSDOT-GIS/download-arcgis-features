@@ -1,7 +1,7 @@
 {
   "name": "DownloadFeatures",
   "main": "index.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "homepage": "https://github.com/WSDOT-GIS/download-arcgis-features",
   "authors": [
     "WSDOT-GIS"
@@ -10,13 +10,20 @@
   "keywords": [
     "ArcGIS"
   ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
   "license": "Unlicense",
   "ignore": [
     "**/.*",
+    "demo",
     "node_modules",
     "bower_components",
     "test",
     "tests",
+    "spec",
     "*.csproj",
     "*.sln"
   ],

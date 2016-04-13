@@ -57,7 +57,20 @@
     <Content Include="bower.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="spec\downloadFeaturesSpec.js" />
     <Content Include="UNLICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="spec\support\jasmine.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".travis.yml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,13 +1,27 @@
-﻿/// <reference path="bower_components/fetch/fetch.js" />
-(function (root, factory) {
+﻿(function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define([], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory(require('node-fetch'));
     } else {
         // Browser globals
         root.downloadFeatures = factory();
     }
-}(this, function () {
+}(this, function (fetchPolyfill) {
+
+    if (fetchPolyfill) {
+        fetch = fetchPolyfill;
+    }
+
+    /**
+     * @external FeatureSet
+     * @see {@link http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/FeatureSet_object/02r3000002mn000000/ FeatureSet object}
+     */
+
     /**
      * Converts an object into a query string.
      * @param {Object} o - An object
@@ -101,14 +115,10 @@
     }
 
     /**
-     * @module downloadFeatures
-     */
-
-    /**
      * Downloads a feature set from a feature layer.
-     * @alias module:downloadFeatures
+     * @exports downloadFeatures
      * @param {string} url - The URL to a feature layer.
-     * @return {Promise.<FeatureSet>} - Returns a feature set.
+     * @return {Promise.<external:FeatureSet>} - Returns a feature set.
      */
     function downloadFeatures(url) {
         return new Promise(function (resolve, reject) {

@@ -1,0 +1,42 @@
+{
+  "name": "download-arcgis-features",
+  "version": "0.1.0",
+  "description": "Function that downloads all features from a map / feature service layer.",
+  "main": "downloadFeatures.js",
+  "readme": "README.md",
+  "directories": {
+    "lib": ".",
+    "test": "spec"
+  },
+  "scripts": {
+    "test": "jasmine",
+    "doc": "jsdoc2md *.js > README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WSDOT-GIS/download-arcgis-features.git"
+  },
+  "keywords": [
+    "ArcGIS",
+    "request",
+    "feature",
+    "featureset"
+  ],
+  "files": [
+    "downloadFeatures.js",
+    "UNLICENSE",
+    "README.md"
+  ],
+  "author": "WSDOT-GIS",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/WSDOT-GIS/download-arcgis-features/issues"
+  },
+  "homepage": "https://github.com/WSDOT-GIS/download-arcgis-features#readme",
+  "dependencies": {
+    "node-fetch": "^1.5.1"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^1.3.3"
+  }
+}
