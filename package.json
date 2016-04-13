@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "jasmine",
-    "doc": "jsdoc2md *.js > README.md"
+    "doc": "jsdoc2md *.js --template README.hbs > README.md"
   },
   "repository": {
     "type": "git",
