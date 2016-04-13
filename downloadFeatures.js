@@ -119,6 +119,12 @@
      * @exports downloadFeatures
      * @param {string} url - The URL to a feature layer.
      * @return {Promise.<external:FeatureSet>} - Returns a feature set.
+     * @example
+     * downloadFeatures("http://data.example.com/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0").then(function (featureSet) {
+     *     console.debug("featureSet", featureSet);
+     * }, function (error) {
+     *     console.error(error);
+     * });
      */
     function downloadFeatures(url) {
         return new Promise(function (resolve, reject) {
