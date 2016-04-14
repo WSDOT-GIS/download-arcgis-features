@@ -1,4 +1,4 @@
-﻿/*global self*/
+/*global self*/
 
 importScripts("../featureQueryUtils.js");
 

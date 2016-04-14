@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     var form = document.forms.downloadForm;
 
 
