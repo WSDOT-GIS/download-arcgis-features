@@ -9,7 +9,10 @@
 <body>
     <form id="downloadForm">
         <input type="url" id="featureServiceUrl" name="url" pattern="https?\://.+/rest/services/(.+)/((Map)|(Feature))Server/\d+"
-               required="required" placeholder="Enter layer URL" title="Enter a valid layer URL" autocomplete="on" />
+               required="required" placeholder="Enter layer URL" title="Enter a valid layer URL" autocomplete="on" list="urlList" />
+        <datalist id="urlList">
+            <option label="WA County Boundaries" value="http://data.wsdot.wa.gov/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0">http://data.wsdot.wa.gov/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0</option>
+        </datalist>
         <button type="submit">Submit</button>
     </form>
     <ul id="list">
