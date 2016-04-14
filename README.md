@@ -2,6 +2,10 @@ ArcGIS feature download
 =======================
 
 [![Build Status](https://travis-ci.org/WSDOT-GIS/download-arcgis-features.svg?branch=master)](https://travis-ci.org/WSDOT-GIS/download-arcgis-features)
+[![bitHound Overall Score](https://www.bithound.io/github/WSDOT-GIS/download-arcgis-features/badges/score.svg)](https://www.bithound.io/github/WSDOT-GIS/download-arcgis-features)
+[![bitHound Dependencies](https://www.bithound.io/github/WSDOT-GIS/download-arcgis-features/badges/dependencies.svg)](https://www.bithound.io/github/WSDOT-GIS/download-arcgis-features/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/WSDOT-GIS/download-arcgis-features/badges/devDependencies.svg)](https://www.bithound.io/github/WSDOT-GIS/download-arcgis-features/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/WSDOT-GIS/download-arcgis-features/badges/code.svg)](https://www.bithound.io/github/WSDOT-GIS/download-arcgis-features)
 
 How it works
 ------------
