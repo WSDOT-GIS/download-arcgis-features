@@ -13,6 +13,11 @@
     }
 }(this, function (fetchPolyfill) {
 
+    /**
+     * Utilities for querying map service / feature service layers.
+     * @module featureQueryUtils
+     */
+
     var maxUrlChars = 2048;
 
     if (fetchPolyfill) {
@@ -79,7 +84,7 @@
         var queryUrl = [url, "query"].join("/");
         var promise;
         if (queryUrl.length + params.length + 1 > maxUrlChars) {
-            promse = fetch(queryUrl, {
+            promise = fetch(queryUrl, {
                 method: "POST",
                 body: params,
                 headers: {
@@ -123,18 +128,7 @@
         return promise;
     }
 
-    /**
-     * Downloads a feature set from a feature layer.
-     * @exports downloadFeatures
-     * @param {string} url - The URL to a feature layer.
-     * @return {Promise.<external:FeatureSet>} - Returns a feature set.
-     * @example
-     * featureQueryUtils.downloadFeatures("http://data.example.com/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0").then(function (featureSet) {
-     *     console.debug("featureSet", featureSet);
-     * }, function (error) {
-     *     console.error(error);
-     * });
-     */
+
     function downloadFeatures(url) {
         return new Promise(function (resolve, reject) {
             Promise.all([getServiceInfo(url), getIds(url)]).then(function (e) {
@@ -157,7 +151,21 @@
         });
     }
 
+
+
     return {
+        /**
+         * Downloads a feature set from a feature layer.
+         * @function
+         * @param {string} url - The URL to a feature layer.
+         * @return {Promise.<external:FeatureSet>} - Returns a feature set.
+         * @example
+         * featureQueryUtils.downloadFeatures("http://data.example.com/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0").then(function (featureSet) {
+         *     console.debug("featureSet", featureSet);
+         * }, function (error) {
+         *     console.error(error);
+         * });
+         */
         downloadFeatures: downloadFeatures
     };
 }));
