@@ -1,7 +1,7 @@
 {
-  "name": "DownloadFeatures",
+  "name": "arcgis-feature-query-utils",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/WSDOT-GIS/download-arcgis-features",
   "authors": [
     "WSDOT-GIS"

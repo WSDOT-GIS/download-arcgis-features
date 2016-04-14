@@ -1,6 +1,6 @@
 {
-  "name": "download-arcgis-features",
-  "version": "0.1.0",
+  "name": "arcgis-feature-query-utils",
+  "version": "1.0.0",
   "description": "Function that downloads all features from a map / feature service layer.",
   "main": "downloadFeatures.js",
   "readme": "README.md",
@@ -23,7 +23,7 @@
     "featureset"
   ],
   "files": [
-    "downloadFeatures.js",
+    "featureQueryUtils.js",
     "UNLICENSE",
     "README.md"
   ],
