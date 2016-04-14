@@ -9,3 +9,8 @@
         -ms-flex: 1;
         flex: 1;
     }
+
+textarea {
+    width: 100%;
+    height: 100%;
+}
