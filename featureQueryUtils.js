@@ -9,7 +9,7 @@
         module.exports = factory(require('node-fetch'));
     } else {
         // Browser globals
-        root.downloadFeatures = factory();
+        root.featureQueryUtils = factory();
     }
 }(this, function (fetchPolyfill) {
 
@@ -129,7 +129,7 @@
      * @param {string} url - The URL to a feature layer.
      * @return {Promise.<external:FeatureSet>} - Returns a feature set.
      * @example
-     * downloadFeatures("http://data.example.com/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0").then(function (featureSet) {
+     * featureQueryUtils.downloadFeatures("http://data.example.com/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0").then(function (featureSet) {
      *     console.debug("featureSet", featureSet);
      * }, function (error) {
      *     console.error(error);
@@ -157,6 +157,8 @@
         });
     }
 
-    return downloadFeatures;
+    return {
+        downloadFeatures: downloadFeatures
+    };
 }));
 

@@ -48,7 +48,6 @@
     <Content Include="demo\index.html" />
     <Content Include="demo\index.js" />
     <Content Include="demo\worker.js" />
-    <Content Include="downloadFeatures.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -57,7 +56,8 @@
     <Content Include="bower.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="spec\downloadFeaturesSpec.js" />
+    <Content Include="featureQueryUtils.js" />
+    <Content Include="spec\featureQueryUtilsSpec.js" />
     <Content Include="UNLICENSE" />
   </ItemGroup>
   <ItemGroup>
