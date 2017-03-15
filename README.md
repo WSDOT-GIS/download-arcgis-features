@@ -45,10 +45,5 @@ Downloads a feature set from a feature layer.
 
 **Example**  
 ```js
-var promise = featureQueryUtils.downloadFeatures("http://data.example.com/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0");
-promise.then(function (featureSet) {
-    console.debug("featureSet", featureSet);
-}, function (error) {
-    console.error(error);
-});
+var promise = featureQueryUtils.downloadFeatures("http://data.example.com/arcgis/rest/services/Shared/CountyBoundaries/MapServer/0");promise.then(function (featureSet) {    console.debug("featureSet", featureSet);}, function (error) {    console.error(error);});
 ```

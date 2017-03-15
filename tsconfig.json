@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "lib": [
+            "es2015",
+            "es2015.promise"
+        ],
+        "typeRoots": [
+            "node_modules/@types",
+            "node_modules/arcgis-rest-api-ts-d"
+        ]
+    }
+}

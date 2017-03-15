@@ -1,4 +1,3 @@
-/*eslint-env amd*/
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
@@ -22,7 +21,7 @@
     var maxUrlChars = 2048;
 
     if (fetchPolyfill) {
-        fetch = fetchPolyfill; // eslint-disable-line no-native-reassign
+        fetch = fetchPolyfill; // eslint-disable-line no-global-assign
     }
 
     /**

@@ -28,7 +28,7 @@
     "*.sln"
   ],
   "devDependencies": {
-    "fetch": "^0.11.0",
-    "es6-promise": "^3.2.1"
+    "fetch": "^2.0.3",
+    "es6-promise": "^4.0.5"
   }
 }

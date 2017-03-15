@@ -1,5 +1,3 @@
-/*global self*/
-
 importScripts("../featureQueryUtils.js");
 
 self.addEventListener("message", function (e) {

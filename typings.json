@@ -1,8 +1,0 @@
-{
-  "name": "arcgis-feature-query-utils",
-  "dependencies": {},
-  "globalDependencies": {
-    "arcgis-rest-api": "github:WSDOT-GIS/arcgis-rest-api-typescript#1181a2cabb66f6a36c0f7bcfaecee2f906f8c3fb",
-    "es2015-promise": "registry:env/es2015-promise#1.0.0+20160526151700"
-  }
-}

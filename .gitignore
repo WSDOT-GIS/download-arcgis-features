@@ -4,6 +4,7 @@ bower_components
 node_modules
 .vs
 typings
+iis-e*.json
 
 # User-specific files
 *.suo
