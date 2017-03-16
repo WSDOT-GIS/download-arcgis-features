@@ -5,6 +5,7 @@ node_modules
 .vs
 typings
 iis-e*.json
+tasks.json
 
 # User-specific files
 *.suo

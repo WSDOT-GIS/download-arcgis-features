@@ -1,4 +1,3 @@
-/*eshint-env jasmine*/
 var featureQueryUtils = require("../featureQueryUtils.js");
 
 describe("test downloadFeatures", function () {

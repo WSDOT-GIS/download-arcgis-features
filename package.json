@@ -3,8 +3,9 @@
   "version": "1.1.0",
   "description": "Function that downloads all features from a map / feature service layer.",
   "main": "featureQueryUtils.js",
+  "typings": "featureQueryUtils",
   "files": [
-    "index.d.ts"
+    "featureQueryUtils.d.ts"
   ],
   "readme": "README.md",
   "directories": {
@@ -36,7 +37,10 @@
     "node-fetch": "^1.6.3"
   },
   "devDependencies": {
+    "@types/node": "^7.0.8",
     "jasmine": "^2.5.3",
-    "jsdoc-to-markdown": "^3.0.0"
+    "jsdoc-to-markdown": "^3.0.0",
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.1"
   }
 }
